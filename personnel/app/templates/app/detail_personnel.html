@@ -1,0 +1,25 @@
+{% extends 'app/base.html'  %}
+{% load static %}
+
+
+{% block title %}Просмотр персонала{% endblock %}
+
+{% block content %}
+
+<div class="base-content">
+    <h1>Просмотр персонала</h1>
+    <div class="one-person">
+        {% if person_one.image %}
+        <img src="{{ person_one.image.url }}" alt="картинка" height="100" width="150">
+        {% else %}
+        <img src="{{ '/my_media/personnel_gallery/default.jpg' }}" alt='картинка' height='100' width='150'>
+        {% endif %}
+        <br>
+        <p>Фамилия: {{ person_one.surname }} </p>
+        <p>Имя: {{ person_one.name }} </p>
+        <p>Отчество: {{ person_one.patronymic }} </p>
+    </div>
+    <a href="{% url 'app:list_personnel' %}">вернуться к списку сотрудников</a>
+</div>
+
+{% endblock %}

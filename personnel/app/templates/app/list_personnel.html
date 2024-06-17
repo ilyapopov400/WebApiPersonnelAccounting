@@ -22,6 +22,7 @@
             <p>Фамилия: {{ person.surname }} </p>
             <p>Имя: {{ person.name }} </p>
             <p>Отчество: {{ person.patronymic }} </p>
+            <a href="{% url 'app:detail_personnel' person.pk %}">перейти к сотруднику</a>
         </div>
     {% endfor %}
 {% endif %}
