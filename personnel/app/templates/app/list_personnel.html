@@ -1,0 +1,31 @@
+{% extends 'app/base.html'  %}
+{% load static %}
+
+
+{% block title %}Просмотр персонала{% endblock %}
+
+{% block content %}
+
+<div class="base-content">
+    <h1>Просмотр персонала</h1>
+{% if not personnel %}
+    <h2>Нет еще ни одной записи</h2>
+{% else %}
+    {% for person in personnel %}
+        <div class="one-person">
+            {% if person.image %}
+                <img src="{{ person.image.url }}" alt="картинка" height="100" width="150">
+            {% else %}
+                <img src="{{ '/my_media/personnel_gallery/default.jpg' }}" alt='картинка' height='100' width='150'>
+            {% endif %}
+            <br>
+            <p>Фамилия: {{ person.surname }} </p>
+            <p>Имя: {{ person.name }} </p>
+            <p>Отчество: {{ person.patronymic }} </p>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+
+{% endblock %}
