@@ -18,6 +18,9 @@
         <p>Фамилия: {{ person_one.surname }} </p>
         <p>Имя: {{ person_one.name }} </p>
         <p>Отчество: {{ person_one.patronymic }} </p>
+        <br>
+        <a href="{% url 'app:update_personnel' person_one.pk %}">изменить карточку сотрудника</a> |
+        <a href="{% url 'app:delete_personnel' person_one.pk %}">удалить карточку сотрудника</a>
     </div>
     <a href="{% url 'app:list_personnel' %}">вернуться к списку сотрудников</a>
 </div>

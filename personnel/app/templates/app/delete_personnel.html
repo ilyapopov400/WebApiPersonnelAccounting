@@ -1,0 +1,25 @@
+{% extends 'app/base.html'  %}
+{% load static %}
+
+
+{% block title %}Удалить карточку сотрудника{% endblock %}
+
+{% block content %}
+
+<div class="base-content">
+    <h1>Удалить карточку сотрудника {{ person_one.surname }}</h1>
+    {% if person_one.image %}
+        <img src="{{ person_one.image.url }}" alt="картинка" height="100" width="150">
+        {% else %}
+        <img src="{{ '/my_media/personnel_gallery/default.jpg' }}" alt='картинка' height='100' width='150'>
+        {% endif %}
+        <br>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit">Удалить карточку сотрудника</button> |
+            <a href="{% url 'app:detail_personnel' person_one.pk %}">вернуться к исходной карточке сотрудника</a>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'app/base.html'  %}
+{% load static %}
+
+
+{% block title %}Изменить карточку сотрудника{% endblock %}
+
+{% block content %}
+
+<div class="base-content">
+    <h1>Изменить карточку сотрудника {{ person_one.surname }}</h1>
+    <div class="one-person">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <button type="submit">Изменить карточку сотрудника</button> |
+            <a href="{% url 'app:detail_personnel' person_one.pk %}">вернуться к исходной карточке сотрудника</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
