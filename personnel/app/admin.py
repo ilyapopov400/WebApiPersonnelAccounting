@@ -3,4 +3,4 @@ from . import models
 
 # Register your models here.
 
-admin.site.register(models.ProfilePersonnel)
+admin.site.register(models.ProfilePersonnelModel)

@@ -4,7 +4,7 @@ from django.core.validators import MinLengthValidator
 
 # Create your models here.
 
-class ProfilePersonnel(models.Model):
+class ProfilePersonnelModel(models.Model):
     """
     Класс для хранения данных о персонале
     """

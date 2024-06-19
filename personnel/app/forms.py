@@ -8,7 +8,7 @@ class PersonnelForm(forms.ModelForm):
     """
 
     class Meta:
-        model = models.ProfilePersonnel
+        model = models.ProfilePersonnelModel
         fields = "__all__"
         labels = {
             "surname": "фамилия",
