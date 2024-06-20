@@ -8,6 +8,10 @@ from . import serializers
 # Create your views here.
 
 
-class ApiListPersonnel(generics.ListAPIView):
+class ApiCreatePersonnel(generics.ListCreateAPIView):
+    """
+    Список всех карточек
+    Создание новой карточки
+    """
     queryset = ProfilePersonnelModel.objects.all()
     serializer_class = serializers.ProfilePersonnelSerializer
