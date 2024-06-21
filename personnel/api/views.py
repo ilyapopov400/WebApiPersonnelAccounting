@@ -15,3 +15,14 @@ class ApiCreatePersonnel(generics.ListCreateAPIView):
     """
     queryset = ProfilePersonnelModel.objects.all()
     serializer_class = serializers.ProfilePersonnelSerializer
+
+
+class ApiDetailPersonnel(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Получить одну карточку
+    изменить одну карточку
+    удалить одну карточку
+
+    """
+    queryset = ProfilePersonnelModel.objects.all()
+    serializer_class = serializers.ProfilePersonnelSerializer
